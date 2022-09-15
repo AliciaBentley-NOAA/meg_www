@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEG Presentations</title>
+  <link rel="stylesheet" type="text/css" href="meg8.css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+<div id="headercontainer" class="hcontainer">
+  <a id="top" class="jumptop"></a>
+  <div class="shadow" id="shadow">
+  <!--<img src="NCEP-Logo.png" alt="NCEP" class="image">-->
+  <img id="himage" src="gfs1.png">
+  </div>
+  
+  <div class="shadow2" id="shadow">
+  <img src="gfs1.png"><div id="logo" class="shadowtext" title="home">Model Evaluation Group</div>
+  <div id="barcontainer" class="barcontainer" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div><div id="menu" class="uldate" >
+    <div id="firstrow" class="firstrow">MEG</div>
+    <div class="lmenucon">
+      <a href="index.html"><li class="lmenutext">Model Evaluation Group (MEG)</li></a>
+      <a href="presentationlist.html"><li class="lmenutext">Past MEG Presentations</li></a>
+      <a href="https://www.emc.ncep.noaa.gov/users/verification/"><li class="lmenutext">EMC Verification Links</li></a>
+      <!--<li class="lmenutext">text2</li>
+      <li class="lmenutext">text3</li>
+      <li class="lmenutext">text4</li>-->
+    </div>
+    <div class="lmenucon">
+      <a href="table.html"><li class="lmenutext">NCEP Model Configurations</li></a>
+      <a href="future.html"><li class="lmenutext">NCEP Model Implementations</li></a>
+      <a href="guidance.html"><li class="lmenutext">NCEP Guidance Links</li></a>
+      <!--<li class="lmenutext">text6</li>
+      <li class="lmenutext">text7</li>
+      <li class="lmenutext">text8</li>-->
+    </div>
+  </div>
+  </div>
+  <!--<div class="tmline" id="topline"></div>-->
+<div class="tmcontainer" id="tmcontainer">
+<!--<a class="a2" href="#top">-->
+  <div class="tmbox" id="tmbox" title="scroll to top">Past MEG Presentations
+  </div>
+<!--</a>-->
+</div>
+<div id="maintextcontainer" class="container"><!--<div id="testline" class="firstline"></div>-->
+  <!--<div id="divpps" class="select">
+    <select id="pps" class="select-hidden"></select>
+    <div id="afterpps" class="select-styled">Pages</div>
+  </div>--><!--<div id="test2" class="select">
+    <select id="date" class="select-hidden"></select>
+    <div id="afterdate" class="select-styled">Verification</div>
+  </div>-->
+<div id="columncon" class="ccontainer">
+  <div id="c2" class="column2">
+      <div id="textbox3" class="textboxfull">
+       <!-- <div id="header3" class="header">Past MEG Presentations</div>-->
+        <div id="header3" class="header"><b><a class="links" href="https://drive.google.com/drive/folders/0BySqFAN_J6G4cWdpNzBRMkM4ZVE">Past MEG Presentations and Recordings</a> </b> (Google Drive folder available to those with a noaa.gov email address)</div>
+        <div id="header3" class="header"><b>Presentation lists for: <a class="links" href="presentationlist.html">Recent</a>, <a class="links" href="2021presentationlist.html">2021</a>, <a class="links" href="2020presentationlist.html">2020</a>, <a class="links" href="2019presentationlist.html">2019</a>, <a class="links" href="2018presentationlist.html">2018</a>, <a class="links" href="2017presentationlist.html">2017</a>, <a class="links" href="2016presentationlist.html">2016</a>, and <a class="links" href="2015presentationlist.html">2015</a></b></div>
+        <div id="header3line" class="line"></div>
+
+
+        <div id="text3" class="text"><b><u>19 December 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Conclusion of the RAPv5/HRRRv4 Official Evaluation</b> - Logan Dawson (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>12 December 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>MEG Evaluation of RAPv5 and HRRRv4</b> - Geoff Manikin (EMC), Logan Dawson (EMC), and Shannon Shields (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>5 December 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>An Update on the RAPv5/HRRRv4 Evaluation</b> - Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>21 November 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>An Update on the RAPv5/HRRRv4 Evaluation</b> - Geoff Manikin (EMC)</p>
+          <p class="texttopics"><b>Cloud Cover and Visibility Findings from the RAPv5/HRRRv4 Evaluation</b> - Shannon Shields (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>31 October 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Initial Findings and Preliminary Stats from the RAPv5/HRRRv4 Evaluation</b> - Shannon Shields (EMC) and Logan Dawson (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>24 October 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>RTMA/URMA v2.8 Upgrade Overview</b> - Steve Levine (EMC) and Ying Lin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>17 October 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>The 2019 NOAA/Hazardous Weather Testbed Spring Forecasting Experiment</b> - Israel Jirak (SPC) and Burkely Gallo (SPC)</p>
+          <p class="texttopics"><b>The 2019 Flash Flood and Intense Rainfall (FFaIR) Experiment Results</b> - Sarah Trojniak (WPC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>10 October 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Introduction to the RAPv5/HRRRv4 Evaluation</b> - Geoff Manikin (EMC) and Curtis Alexander (ESRL)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>26 September 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>HREFv3: Upgrade Plans for the Next Year</b> - Matthew Pyle (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>19 September 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Hurricane Dorian (2019)</b> - Alicia Bentley (EMC), Logan Dawson (EMC), and Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>5 September 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Model Upgrades Planned for FY20/21</b> - Vijay Tallapragada (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>25 July 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>GFS Max Temperatures in the Corn Belt</b> - Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>18 July 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Hurricane Barry (2019)</b> - Alicia Bentley (EMC), Logan Dawson (EMC), and Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>27 June 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Evaluating Forecasts of the 21&ndash;22 June 2019 Derecho</b> - Alicia Bentley (EMC) and Logan Dawson (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>13 June 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>The Implementation of GFSv15</b> - Geoff Manikin (EMC), Alicia Bentley (EMC), Logan Dawson (EMC), and Tracey Dorian (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>6 June 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>2018-19 WPC Winter Weather Experiment</b> - Sara Sienkiewicz (WPC), Mike Bodner (WPC), Bill Lamberson (WPC), and Ben Albright (WPC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>23 May 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>20 May 2019 Southern Plains High Risk Day</b> - Logan Dawson (EMC) and Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>2 May 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>2019 Convective Season Modeling Update</b> - Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>18 April 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Comparing Forecasts of the April 2019 Central U.S. Cyclone</b> - Alicia Bentley (EMC)</p>
+          <p class="texttopics"><b>10&ndash;12 April 2019 Plains Cyclone: Moisture Return in the CAM Guidance</b> - Logan Dawson (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>11 April 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Predictability of Two Major March Storms</b> - Tracey Dorian (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>4 April 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>FV3GFS (GFSv15.1) Status Update: Addressing Excessive Snowfall and the Low-Level Cold Bias</b> - Alicia Bentley (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>21 March 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>The Model Evaluation Group Assessment of Physics Package Testing for GFSv16</b> - Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>14 March 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Advancing Model Physics in the GFS</b> - Jack Kain (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>7 March 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Status Update on Addressing Excessive Snowfall and the Lower Tropospheric Cold Bias in the FV3GFS</b> - Logan Dawson (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>21 February 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>FV3GFS Cold/Snow Concerns</b> - Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+        <div id="text3" class="text"><b><u>7 February 2019</u></b><br>
+        <div >
+          <p class="texttopics"><b>Late December/Early January GFS Skill Scores and Updated FV3GFS Implementation Timeline</b> - Geoff Manikin (EMC)</p>
+        </div>
+        </div>
+
+
+</div>
+      
+</div><!--column two -->
+</div>
+</div>
+<br class="clear"/>
+ <div id="footer" class="fcontainer">
+  <div class="fshadow">
+  <img src="NOAA-Transparent-Logo_1.png" alt="NOAA" class="noaaimage">
+  <div class="ftext"><p>Environmental Modeling Center<br/>NOAA Center for Weather and Climate Prediction<br/>5830 University Research Court<br/>College Park, MD 20740</p></div>
+  <img src="ncep_logo.gif" alt="NCEP" class="ncepimage">
+  </div>
+<br class="clear"/>
+ </div>
+<script type='text/javascript'>
+function preloader() {
+    var images = new Array()
+    function preload() {
+        var numloaded=1;
+        for (i = 0; i < preload.arguments.length; i++) {
+            images[i] = new Image()
+            images[i].src = preload.arguments[i]
+            console.log(preload.arguments[i]);
+               
+             images[i].onload = function(d) {
+                   //console.log(images[i]);
+                   console.log(d);
+                 }
+            images[i].onerror = function(d) {
+                 console.log("error");
+                 }
+               }
+               }
+    var i, urls = [];
+    for(i = 1; i <= 17; i++) {
+          urls.push('gfs' + i + '.png');}
+   // console.log(urls);
+    preload.apply(null, urls);
+}
+
+
+var yyy=preloader();
+
+
+    d3.selectAll(".threepanel").on("click",function(k) {
+    //console.log(d.value.split(" ")[0]);
+    //console.log(this.parentNode.id);
+    var thismodel=this.parentNode.id;
+    imagecontainer=d3.select("#headercontainer").append("div").attr("class","gcontainer");
+    //console.log(imagecontainer);
+
+imagecontainer.on("click",function(i) {
+      d3.select(this).transition().duration(333).style("opacity","0").remove();});
+    //imagecontainer.app
+    imagecontainer.append("div")
+      .attr("class","imagebox");
+    d3.select(".imagebox").append("img").attr("src",this.src).attr("class","domainimage");
+    d3.select(".gcontainer").transition().duration(333).style("opacity","1");
+    });
+    d3.selectAll(".fourpanel").on("click",function(k) {
+    //console.log(d.value.split(" ")[0]);
+    //console.log(this.parentNode.id);
+    var thismodel=this.parentNode.id;
+    imagecontainer=d3.select("#headercontainer").append("div").attr("class","gcontainer");
+    //console.log(imagecontainer);
+
+imagecontainer.on("click",function(i) {
+      d3.select(this).transition().duration(333).style("opacity","0").remove();});
+    //imagecontainer.app
+    imagecontainer.append("div")
+      .attr("class","imagebox");
+    d3.select(".imagebox").append("img").attr("src",this.src).attr("class","domainimage");
+    d3.select(".gcontainer").transition().duration(333).style("opacity","1");
+    });
+
+
+
+/*! Reloads page on every visit */
+function Reload() {
+    try {
+        var headElement = document.getElementsByTagName("head")[0];
+        if (headElement && headElement.innerHTML)
+            headElement.innerHTML += " ";
+        } catch (e) {}
+    }
+
+    /*! Reloads on every visit in mobile safari */
+    if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
+        window.onpageshow = function(evt) {
+            if (evt.persisted) {
+                //document.body.style.display = "none";
+                location.reload();
+                //document.getElementById('maint').scrollLeft=0;
+            }
+        };
+    }
+//scrolling to top code from shunryu111 stackoverflow answer at http://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation
+// first add raf shim
+// http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+// main function
+function scrollToY(scrollTargetY, speed, easing) {
+    console.log("start");
+    // scrollTargetY: the target scrollY property of the window
+    // speed: time in pixels per second
+    // easing: easing equation to use
+
+    var scrollY = window.scrollY || document.documentElement.scrollTop,
+        scrollTargetY = scrollTargetY || 0,
+        speed = speed || 2000,
+        easing = easing || 'easeOutSine',
+        currentTime = 0;
+    console.log(scrollY);
+    console.log("scrollY");
+    console.log(window.scrollY);
+    console.log(document.documentElement.scrollTop);
+    // min time .1, max time .8 seconds
+    var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+    // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+    var easingEquations = {
+            easeOutSine: function (pos) {
+                return Math.sin(pos * (Math.PI / 2));
+            },
+            easeInOutSine: function (pos) {
+                return (-0.5 * (Math.cos(Math.PI * pos) - 1));
+            },
+            easeInOutQuint: function (pos) {
+                if ((pos /= 0.5) < 1) {
+                    return 0.5 * Math.pow(pos, 5);
+                }
+                return 0.5 * (Math.pow((pos - 2), 5) + 2);
+            }
+        };
+
+    // add animation loop
+    function tick() {
+        currentTime += 1 / 60;
+
+        var p = currentTime / time;
+        var t = easingEquations[easing](p);
+
+        if (p < 1) {
+            requestAnimFrame(tick);
+
+            window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
+        } else {
+            console.log('scroll done');
+            window.scrollTo(0, scrollTargetY);
+        }
+    }
+
+    // call it once to get started
+    tick();
+}
+
+
+
+
+d3.select("#tmbox")
+  .on("click",function(d) {
+      console.log("click");
+      scrollToY(0,1500,'easeInOutQuint');
+    });
+  //.on("click",scrollToY(0,150,'easeInOutQuint'));
+
+
+var books=["md","gwtw","wap"];
+d3.selectAll(".b")
+  .data(books);
+d3.selectAll(".b")
+  .on("click",function(d) {
+    var links=d3.selectAll(".b");
+    //console.log(links._groups[0]);
+    links.style("color","#fff");
+    for (i=0;i<links._groups[0].length;i++) {
+       if (links._groups[0][i].__data__==d) {
+         links._groups[0][i].style.color="#989898";
+        }
+    }
+    //console.log(d);
+    });
+d3.selectAll(".c")
+  .on("click",function(d) {
+    var links=d3.selectAll(".b");
+    links.style("color","#fff");
+    });
+
+var def=0;
+var ulpps=d3.select("#menu");
+//d3.text("2701.txt",function(data) {
+  //console.log(data);
+//  var moby=d3.select("#text1")
+      //.append("p")
+//      .text(data);
+//  });
+//d3.text("gwtw.txt",function(data) {
+  //console.log(data);
+//  var moby=d3.select("#text3")
+      //.append("p")
+//      .text(data);
+//  });
+//d3.text("wap.txt",function(data) {
+//  //console.log(data);
+//  var moby=d3.select("#text4")
+      //.append("p")
+//      .text(data);
+//  });
+//shadowheight=document.getElementById('shadow').offsetHeight;  
+//shadowwidth=document.getElementById('shadow').offsetWidth;  
+//document.getElementById('barcontainer').style.top=(shadowheight*.5)+"px"
+
+
+var bc=d3.select("#barcontainer");
+var line=d3.select("#tmcontainer");
+var lineh=line._groups[0][0].offsetHeight;
+var linew=line._groups[0][0].offsetWidth;
+      var tmcontainerRect = document.getElementById('tmcontainer');
+      var landr=tmcontainerRect.getBoundingClientRect();
+//console.log(lineh);
+//console.log(landr.left);
+//console.log(landr.right);
+//console.log(bc);
+var bcw=bc._groups[0][0].offsetWidth;
+var bch=bc._groups[0][0].offsetHeight;
+//ulpps.onclick=function() {
+//  return false;
+//  }
+
+scrollTop=0.0;
+//var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+window.onscroll=function() {
+console.log("scroll");
+var line=d3.select("#tmcontainer");
+var lineh=line._groups[0][0].offsetHeight;
+      var bodyRect = document.body.getBoundingClientRect();
+      var tmelement = document.getElementById('shadow');
+      var tmenuRect=tmelement.getBoundingClientRect();
+      var tmcontainerRect = document.getElementById('tmcontainer');
+      difpix=tmenuRect.bottom-bodyRect.top;
+      //console.log(difpix);
+scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      zi=Math.floor(scrollTop/difpix*17)+1;
+      console.log(zi);
+      if (zi<18 && zi>0) {
+        d3.select("#himage")
+          .attr("src","gfs"+zi+".png");
+       }
+
+     if (scrollTop>difpix) {
+        tmcontainerRect.className='fixed';
+        document.getElementById('columncon').style.marginTop=lineh+"px"
+        document.getElementById('tmcontainer').style.left=landr.left+"px"
+        document.getElementById('tmcontainer').style.right=landr.right+"px"
+      }
+      else {
+        document.getElementById('columncon').style.marginTop="0px"
+        tmcontainerRect.className='tmcontainer';
+        document.getElementById('tmcontainer').style.left=landr.left+"px"
+        document.getElementById('tmcontainer').style.right=landr.right+"px"
+      }
+  };
+      
+
+  
+
+function myFunction(x) {
+    x.classList.toggle("change");
+    var ulpps=d3.select("#menu");
+    if (def==0) {
+      document.getElementById('menu').style.top="50%"
+      ulpps.style("visibility","visible");
+      var ulw=ulpps._groups[0][0].offsetWidth;
+      var bodyRect = document.body.getBoundingClientRect();
+      var element=document.getElementById('menu');
+      rect=element.getBoundingClientRect();
+      var barpos=document.getElementById('barcontainer').getBoundingClientRect();
+      //console.log(barpos.top);
+      //console.log(barpos.left);
+      //console.log(barpos.right);
+      document.getElementById('barcontainer').style.transition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color .3s ease-in";
+      document.getElementById('menu').className+=" load";
+      document.getElementById('barcontainer').className+=" load";
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+var bc=d3.select("#barcontainer");
+var bcw=bc._groups[0][0].offsetWidth;
+var bch=bc._groups[0][0].offsetHeight;
+      //document.getElementById('menu').style.top=(rect.top-bodyRect.top)-0.0+(bch/2.0)+"px";
+      document.getElementById('menu').style.top=(rect.top-bodyRect.top)-(bch/2.0)-5+"px"
+      document.getElementById('menu').style.right=(bodyRect.right-barpos.right)-10+"px"
+      document.getElementById('menu').style.width=document.body.clientWidth-2*((bodyRect.right-barpos.right)-10)+"px"
+
+
+
+
+      def=1;
+    }
+    else {
+      ulpps.style("visibility","hidden");
+      document.getElementById('menu').className="uldate";
+      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').className="barcontainer";
+      document.getElementById('menu').style.top="50%"
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+      def=0;
+    }
+
+}
+d3.select('#maintextcontainer').on("click",(function(d) {
+
+      var ulpps=d3.select("#menu");
+      ulpps.style("visibility","hidden");
+      document.getElementById('menu').className="uldate";
+      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').className="barcontainer";
+      document.getElementById('menu').style.top="50%"
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+      def=0;
+
+     }));
+document.body.onclick=function(event) {
+      if ((!document.getElementById('menu').contains(event.target) && !document.getElementById('barcontainer').contains(event.target))) {
+      //if (document.getElementById('maintextcontainer').contains(event.target)) {
+      //console.log(def);
+      var ulpps=d3.select("#menu");
+      ulpps.style("visibility","hidden");
+      document.getElementById('menu').className="uldate";
+      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').className="barcontainer";
+      document.getElementById('menu').style.top="50%"
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+      def=0;
+    }
+  };
+
+      var xw=window.innerWidth;
+      if (xw>=600) {
+        if( element = document.getElementById('textbox2')){ largesttop = element.offsetHeight;
+        document.getElementById('textbox').style.height=largesttop+"px";}
+        //var largesttop2=document.getElementById('textbox2').offsetHeight;
+        //document.getElementById('textboxother').style.height=largesttop2+"px";
+      }
+window.onresize = function(event) {
+      var xw=window.innerWidth;
+      console.log("resize");
+      //console.log(scrollTop);
+      document.getElementById('menu').style.top="50%"
+      var bodyRect = document.body.getBoundingClientRect();
+      var element=document.getElementById('menu');
+      rect=element.getBoundingClientRect();
+      var barpos=document.getElementById('barcontainer').getBoundingClientRect();
+
+
+      if (xw>=600) {
+        if( element=document.getElementById('textbox2')){ largesttop = element.offsetHeight;
+        document.getElementById('textbox').style.height=largesttop+"px";}
+        //var largesttop2=document.getElementById('textbox2').offsetHeight;
+        //document.getElementById('textboxother').style.height=largesttop2+"px";
+      }
+      else {
+        document.getElementById('textbox').style.height="";
+        //document.getElementById('textboxother').style.height="";
+      }
+
+
+var bc=d3.select("#barcontainer");
+var bcw=bc._groups[0][0].offsetWidth;
+var bch=bc._groups[0][0].offsetHeight;
+      //console.log((rect.top-bodyRect.top)-(bch/2.0)-5+"px");
+      //document.getElementById('menu').style.top=(rect.top-bodyRect.top)-0.0+(bch/2.0)+"px";
+      document.getElementById('menu').style.top=(rect.top-bodyRect.top)-(bch/2.0)-5+"px"
+      document.getElementById('menu').style.right=(bodyRect.right-barpos.right)-10+"px"
+      document.getElementById('menu').style.width=document.body.clientWidth-2*((bodyRect.right-barpos.right)-10)+"px"
+      //window.scrollTo(0,scrollTop);
+};
+
+
+
+
+var droppedpps=0;
+function changepps() {
+  if (droppedpps==0) {
+    afterpps.attr("class","select-styled active");
+    ulpps.style("display","block")
+    droppedpps=1;
+   }
+   else {
+    droppedpps=0;
+    ulpps.style("visibility","hidden");
+    afterpps.attr("class","select-styled");
+    showpps.attr("class","select");};
+};
+var ppslist=["MEG","GFS"];
+var pstrings=["","gfs"];
+var pagestring="";
+
+//page menu creation
+var hidepps=d3.select("#pps")
+  .attr("class","select-hidden");
+hidepps.selectAll("option")
+  .data(ppslist)
+  .enter().append("option")
+    .text(function(d) { return d; });
+hidepps.property("value","Pages");
+var showpps=d3.select("#divpps")
+  .attr("class","select");
+var afterpps=d3.select("#afterpps")
+  .attr("class","select-styled")
+  .text("Pages")
+  .on("click",changepps);
+afterpps.property("value","Pages");
+var ulpps=d3.select("#divpps").append("ul")
+  .attr("class","uldate");
+ulpps.selectAll("li")
+  .data(ppslist)
+  .enter().append("li")
+    .attr("class","mainlipps")
+    .text(function(d,i) { return ppslist[i]; })
+    .attr("id",function(d) { return "MD"+String(d);});
+ulpps.style("visibility","hidden");
+ulpps.selectAll(".mainlipps").on("click",function(d) {
+  for (i=0;i<ppslist.length;i++) {
+    if (ppslist[i]==d) {
+      //field=ppsdata[i];
+      //field2=ppsdata2[i];
+      //imax=imaxespps[i];
+      pagestring=pstrings[i];
+      //console.log(d);
+    }
+   }
+    droppedpps=0;
+    ulpps.style("visibility","hidden");
+    afterpps.attr("class","select-styled");
+    showpps.attr("class","select");
+    window.location="http://www.emc.ncep.noaa.gov/mmb/gmanikin/meg/testmeg"+pagestring+".html"
+  //loadimages();
+})
+
+
+
+d3.select("#logo")
+  .on("click",function(d) {
+     window.location="https://www.emc.ncep.noaa.gov/users/meg/home/"
+     //console.log("clicked");
+  })
+
+</script>
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137023687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137023687-1');
+</script>

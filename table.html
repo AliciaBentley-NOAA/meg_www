@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCEP Model Table</title>
+  <link rel="stylesheet" type="text/css" href="meg9.css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+<div id="headercontainer" class="hcontainer">
+  <a id="top" class="jumptop"></a>
+  <div class="shadow" id="shadow">
+  <!--<img src="NCEP-Logo.png" alt="NCEP" class="image">-->
+  <img id="himage" src="gfs1.png">
+  </div>
+  
+  <div class="shadow2" id="shadow">
+  <img src="gfs1.png"><div id="logo" class="shadowtext" title="home">Model Evaluation Group</div>
+  <div id="barcontainer" class="barcontainer" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div><div id="menu" class="uldate" >
+    <div id="firstrow" class="firstrow">MEG</div>
+    <div class="lmenucon">
+      <a href="index.html"><li class="lmenutext">Model Evaluation Group (MEG)</li></a>
+      <a href="presentationlist.html"><li class="lmenutext">Past MEG Presentations</li></a>
+      <a href="https://www.emc.ncep.noaa.gov/users/verification/"><li class="lmenutext">EMC Verification Links</li></a>
+      <!--<li class="lmenutext">text2</li>
+      <li class="lmenutext">text3</li>
+      <li class="lmenutext">text4</li>-->
+    </div>
+    <div class="lmenucon">
+      <a href="table.html"><li class="lmenutext">NCEP Model Configurations</li></a>
+      <a href="future.html"><li class="lmenutext">NCEP Model Implementations</li></a>
+      <a href="guidance.html"><li class="lmenutext">NCEP Guidance Links</li></a>
+      <!--<li class="lmenutext">text6</li>
+      <li class="lmenutext">text7</li>
+      <li class="lmenutext">text8</li>-->
+    </div>
+  </div>
+  </div>
+  <!--<div class="tmline" id="topline"></div>-->
+<div class="tmcontainer" id="tmcontainer">
+<!--<a class="a2" href="#top">-->
+  <div class="tmbox" id="tmbox" title="scroll to top">NCEP Model Configuration Table
+  </div>
+<!--</a>-->
+</div>
+<div id="maintextcontainer" class="tablecontainer" style="white-space:nowrap;margin-top:0em;"><!--<div id="testline" class="firstline"></div>-->
+ <div id="t" class="mtablediv">
+  <table class="tablemodel" id="tablemodel">
+    <thead>
+      <tr class="trheader">
+        <td class="theader">Model</td>
+      </tr>
+    </thead>
+  <tbody class="mbody">
+  </tbody>
+  </table>
+ <!--</div><div id="maint" class="m2tablediv" style="overflow-x:auto;">-->
+ </div><div class="ptcontainer" >
+  <div class="sboxleft"></div>
+  <div class="sboxright"></div>
+<div id="maint" class="m2tablediv" style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:wrap;">
+  <table class="tablemain" id="tablemain">
+    <thead>
+      <tr class="tr2header">
+        <td class="t2header">Model Core</td>
+        <td class="t2header" style="z-index:999;" id="hr">Horizontal Grid Spacing</td>
+        <td class="t2header">Vertical Levels</td>
+        <td class="t2header">Model Top</td>
+        <td class="t2header">Domain</td>
+        <td class="t2header">Forecast Hours</td>
+        <td class="t2header">Cycles per Day</td>
+        <td class="t2header">Convection Scheme</td>
+        <td class="t2header">Microphysics Scheme</td>
+        <td class="t2header">PBL Scheme</td>
+        <td class="t2header">Radiation Scheme</td>
+        <td class="t2header">Initial Conditions</td>
+        <td class="t2header">Boundary Conditions</td>
+        <td class="t2header">Last Upgrade<br/>(click for SCN)</td>
+      </tr>
+    </thead>
+  <tbody class="m2body">
+  </tbody>
+  </table>
+ </div>
+ </div>
+   
+</div>
+ <div id="footer" class="fcontainer">
+  <div class="fshadow">
+  <img src="NOAA-Transparent-Logo_1.png" alt="NOAA" class="noaaimage">
+  <div class="ftext"><p><a href="https://www.emc.ncep.noaa.gov/"><font color="#0a84c9">Environmental Modeling Center</font></a><br/>NOAA Center for Weather and Climate Prediction<br/>5830 University Research Court<br/>College Park, MD 20740</p></div>
+  <img src="ncep_logo.gif" alt="NCEP" class="ncepimage">
+  </div>
+<br class="clear"/>
+ </div>
+</div>
+<script type='text/javascript'>
+function preloader() {
+    var images = new Array()
+    function preload() {
+        var numloaded=1;
+        for (i = 0; i < preload.arguments.length; i++) {
+            images[i] = new Image()
+            images[i].src = preload.arguments[i]
+            console.log(preload.arguments[i]);
+               
+             images[i].onload = function(d) {
+                   //console.log(images[i]);
+                   console.log(d);
+                 }
+            images[i].onerror = function(d) {
+                 console.log("error");
+                 }
+               }
+               }
+    var i, urls = [];
+    for(i = 1; i <= 17; i++) {
+          urls.push('gfs' + i + '.png');}
+   // console.log(urls);
+    preload.apply(null, urls);
+}
+
+
+var yyy=preloader();
+  var windowwidth=document.body.clientWidth;
+  var ltwidth=document.getElementById('t').offsetWidth;
+  var mtwidth=document.getElementById('tablemain').offsetWidth;
+  var mtscroll=document.getElementById('maint').scrollLeft;
+  if ((windowwidth-(ltwidth-mtscroll))-mtwidth>=0) {
+    d3.select(".sboxright").style("visibility","hidden");
+  }
+  else {
+    d3.select(".sboxright").style("visibility","visible");
+  }
+
+d3.select("#maint").on("scroll",function(d) {
+document.getElementById('maint').style.width=document.body.clientWidth-document.getElementById('t').offsetWidth+"px"
+  var windowwidth=document.body.clientWidth;
+  var ltwidth=document.getElementById('t').offsetWidth;
+  var mtwidth=document.getElementById('tablemain').offsetWidth;
+  var mtscroll=document.getElementById('maint').scrollLeft;
+  //console.log(mtscroll);
+  //console.log((windowwidth-(ltwidth-mtscroll))+mtwidth);
+  if ((windowwidth-(ltwidth-mtscroll))-mtwidth>=0) {
+    d3.select(".sboxright").style("visibility","hidden");
+    //d3.select(".sboxright").transition(250).style("opacity","0");
+  }
+  else {
+    d3.select(".sboxright").style("visibility","visible");
+    //d3.select(".sboxright").transition(250).style("opacity",".4");
+  }
+  if (mtscroll>0) {
+    d3.select(".sboxleft").style("visibility","visible");
+    //d3.select(".sboxleft").transition(250).style("opacity","0.4");
+  }
+  else {
+    //d3.select(".sboxleft").transition(500).style("opacity","0");
+    d3.select(".sboxleft").style("visibility","hidden");
+    //d3.select(".sboxleft").transition(250).style("opacity","0");
+  }
+  
+  });
+
+
+/*! Reloads page on every visit */
+function Reload() {
+    try {
+        var headElement = document.getElementsByTagName("head")[0];
+        if (headElement && headElement.innerHTML)
+            headElement.innerHTML += " ";
+        } catch (e) {}
+    }
+
+    /*! Reloads on every visit in mobile safari */
+    if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
+        window.onpageshow = function(evt) {
+            if (evt.persisted) {
+                location.reload();
+                //;document.getElementById('maint').scrollLeft=0;
+            }
+        };
+    }
+
+
+var def=0;
+//d3.selectAll(".lmenutext").on("click",function (d) {
+//      var ulpps=d3.select("#menu");
+//      ulpps.style("visibility","hidden");
+//      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+//      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+//      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+//      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+//      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+//      document.getElementById('barcontainer').className="barcontainer";
+//      document.getElementById('menu').style.top="50%"
+//      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+//      def=0;
+//});
+
+var format=d3.timeParse("%m/%Y");
+
+var innertexts=["Model core","Horizontal resolution","Vertical resolution","Forecast hours","Cycles per day","Convective scheme","Microphysics","PBL scheme","Radiation scheme","Initial conditions","Boundary conditions","Last upgrade"]
+var innernames=["Core","Horizontal_resolution","Vertical_resolution","Model_top","Domain","Forecast_hours","Cycles_per_day","Convective_scheme","Microphysics","PBL","Radiation","IC","Boundary_conditions","Last_date"]
+
+
+d3.csv("table.csv",function(error, data) {
+  if (error) throw error;
+  var models=d3.keys(data[0]).filter(function(key) {
+     return key=="Model";
+  });
+  var main=d3.keys(data[0]).filter(function(key) {
+     return key!="Model" && key!="";
+  });
+  d3.selectAll(".theader").data(models).on("click",function(k) {
+    //console.log("clicked header");
+  });
+//  var ascend=0;
+  var ascend=1;
+  var istring="Horizontal_resolution";
+
+//onclick for main table
+  d3.selectAll(".t2header").data(main).on("click",function(k) {
+   
+//see if column should be sorted ascending or descending
+    if (k==istring) {
+      ascend=ascend;
+    }
+    else {
+      ascend=0;
+    }
+    istring=k;
+    
+//change colors back to dull gray then get column id. For
+//Model there's only one column which makes things easier
+   d3.selectAll(".t2header").style("background-color","#778899");
+    //var thistext=this.innerText;
+    d3.select(this).each(function(k) {
+      thistext=k;
+    });
+    for (i=0;i<innernames.length;i++) {
+      if (thistext===innernames[i]) {
+        colid="#"+innernames[i];
+        break;
+      }
+    }
+    d3.select(this).style("background-color","#5288be");
+    
+
+//initialize pq array for sorting other table
+    pq=[];
+
+//select all rows of main table
+  d3.select(".m2body").selectAll("tr").sort(function(a,b) { 
+  //get first word of string
+      var ak=a[k].split(" ")[0];
+      var bk=b[k].split(" ")[0];
+      var isdate=/[0-9][0-9]\/[0-9][0-9][0-9][0-9]/.exec(a[k]);
+
+  //if it's a date special instructions
+      if (isdate) {
+        //console.log(ascend);
+        var dateA=format(a[k]),dateB=format(b[k]);
+        if (ascend==1) {
+          pq.push(dateA < dateB ? 1 : -1);
+          return dateA < dateB ? 1 : -1;
+        }
+        else {
+          pq.push(dateA > dateB ? 1 : -1);
+          return dateA > dateB ? 1 : -1;
+        }
+      }
+  //if it's a string with no numbers special instructions
+      else if (b[k].split(" ")[0].replace(/[\D]/g,'')=='') { 
+      //console.log(b[k].split(" ")[0].replace(/[\D]/g,''));
+        //var nameA=a[k].toLowerCase().replace(/\s+/g,''),nameB=b[k].toLowerCase().replace(/\s+/g,'');
+        var nameA=a[k].toLowerCase().replace(/[^\w]/g,'').replace(/\d/g,''),nameB=b[k].toLowerCase().replace(/[^\w]/g,'').replace(/\d/g,'');
+        //console.log(nameA);
+        if (ascend==1) {
+          pq.push(nameA < nameB ? 1 : -1);
+          return nameA < nameB ? 1 : -1;
+        }
+        else {
+          pq.push(nameA > nameB ? 1 : -1);
+          return nameA > nameB ? 1 : -1;
+        }
+      }
+  //else it's a number
+      else {
+        if (ascend==1) {
+          pq.push(+ak.replace(/[^0-9.]/g,'') < +bk.replace(/[^0-9.]/g,'') ? 1 : -1);
+          return +ak.replace(/[^0-9.]/g,'') < +bk.replace(/[^0-9.]/g,'') ? 1 : -1;
+        }
+        else {
+          pq.push(+ak.replace(/[^0-9.]/g,'') > +bk.replace(/[^0-9.]/g,'') ? 1 : -1);
+          return +ak.replace(/[^0-9.]/g,'') > +bk.replace(/[^0-9.]/g,'') ? 1: -1;
+        }
+     }
+    });
+
+//alternate ascending and descending
+    if (ascend==0) {
+      ascend=1;
+    }
+    else {
+      ascend=0;
+    }
+
+//sort other table
+  var i=-1;
+  d3.select(".mbody").selectAll("tr").sort(function (a,b){
+  i+=1;
+  return pq[i];
+  });
+
+//color other table
+  var eoo=0;
+  d3.select(".mbody").selectAll("tr")
+   .style("background-color",function(d) {
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         return "#ebebeb"
+  }});
+
+//color this table
+  var eoo=0;
+  d3.select(".m2body").selectAll("tr")
+   .style("background-color",function(d) {
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         return "#ebebeb"
+  }});
+
+//color all cells original colors
+  d3.selectAll("td")
+   .style("background-color",function(d) {
+      return this.parentNode.style.backgroundColor;
+   });
+
+//color chosen column cells differently
+  var eoo=0;
+  //console.log("color change");
+  //console.log(colid);
+  d3.selectAll(colid)
+   .style("background-color",function(d) {
+      //console.log(this.parentNode.style.backgroundColor);
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#edf3f8";
+         }
+       else {
+          eoo+=1;
+         return "#b9cfe5"
+  }});
+    d3.select(this).style("background-color","#5288be");
+
+  });//onclick for main table headers
+
+
+
+//onclick for menu table
+  d3.selectAll(".theader").data(models).on("click",function(k) {
+   
+//see if column should be sorted ascending or descending
+    if (k==istring) {
+      ascend=ascend;
+    }
+    else {
+      ascend=0;
+    }
+    istring=k;
+    
+//change colors back to dull gray then get column id. For
+//Model there's only one column which makes things easier
+   d3.selectAll(".theader").style("background-color","#778899");
+    var thistext=this.innerText;
+    d3.select(this).style("background-color","#5288be");
+    
+
+//initialize pq array for sorting other table
+    pq=[];
+
+//select all rows of menu table
+  d3.select(".mbody").selectAll("tr").sort(function(a,b) { 
+  //get first word of string
+      var ak=a[k].split(" ")[0].replace(/-/g,'');
+      var bk=b[k].split(" ")[0].replace(/-/g,'');
+      //console.log(ak);
+      var isdate=/[0-9][0-9]\/[0-9][0-9][0-9][0-9]/.exec(a[k]);
+
+  //if it's a date special instructions
+      if (isdate) {
+        //console.log(ascend);
+        var dateA=format(a[k]),dateB=format(b[k]);
+        if (ascend==1) {
+          pq.push(dateA < dateB ? 1 : -1);
+          return dateA < dateB ? 1 : -1;
+        }
+        else {
+          pq.push(dateA > dateB ? 1 : -1);
+          return dateA > dateB ? 1 : -1;
+        }
+      }
+  //if it's a string with no numbers special instructions
+      else if (b[k].replace(/\D/g,'')=='') { 
+        var nameA=a[k].toLowerCase().replace(/[^\w]/g,''),nameB=b[k].toLowerCase().replace(/[^\w]/g,'');
+        if (ascend==1) {
+          pq.push(nameA < nameB ? 1 : -1);
+          return nameA < nameB ? 1 : -1;
+        }
+        else {
+          pq.push(nameA > nameB ? 1 : -1);
+          return nameA > nameB ? 1 : -1;
+        }
+      }
+  //else it's a number
+      else {
+        if (ascend==1) {
+          pq.push(+ak.replace(/[^0-9.]/g,'') < +bk.replace(/[^0-9.]/g,'') ? 1 : -1);
+          return +ak.replace(/[^0-9.]/g,'') < +bk.replace(/[^0-9.]/g,'') ? 1 : -1;
+        }
+        else {
+          pq.push(+ak.replace(/[^0-9.]/g,'') > +bk.replace(/[^0-9.]/g,'') ? 1 : -1);
+          return +ak.replace(/[^0-9.]/g,'') > +bk.replace(/[^0-9.]/g,'') ? 1: -1;
+        }
+     }
+    });
+
+//alternate ascending and descending
+    if (ascend==0) {
+      ascend=1;
+    }
+    else {
+      ascend=0;
+    }
+
+//sort other table
+  var i=-1;
+  d3.select(".m2body").selectAll("tr").sort(function (a,b){
+  i+=1;
+  return pq[i];
+  });
+
+//color other table
+  var eoo=0;
+  d3.select(".m2body").selectAll("tr")
+   .style("background-color",function(d) {
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         return "#ebebeb"
+  }});
+
+//color this table
+  var eoo=0;
+  d3.select(".mbody").selectAll("tr")
+   .style("background-color",function(d) {
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         return "#ebebeb"
+  }});
+
+//color all cells original colors
+  d3.selectAll("td")
+   .style("background-color",function(d) {
+      return this.parentNode.style.backgroundColor;
+   });
+
+//color chosen column cells differently
+  var eoo=0;
+  //console.log(colid);
+  d3.selectAll(".mtd")
+   .style("background-color",function(d) {
+      //console.log(this.parentNode.style.backgroundColor);
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#edf3f8";
+         }
+       else {
+          eoo+=1;
+         return "#b9cfe5"
+  }});
+    d3.select(this).style("background-color","#5288be");
+
+  });//onclick for main table headers
+
+
+
+
+
+
+
+
+
+//initialization of table
+  var eoo=0;
+  var tr=d3.select(".mbody").selectAll("tr")
+    .data(data)
+   .enter().append("tr")
+   .style("background-color",function(d) {
+      //console.log(d);
+      if (eoo%2==0) {
+          eoo+=1;
+          //console.log("white");
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+          //console.log("black");
+         return "#ebebeb"
+  }});
+  tr.append("td")
+    .attr("class","mtd")
+    .text(function(d) {return d.Model; });
+  var eoo=0;
+  var tr2=d3.select(".m2body").selectAll("tr")
+    .data(data)
+   .enter().append("tr")
+   .attr("id",function(d) {
+      return d.Model.replace(/[^\w]/g,'');
+    })
+   .style("background-color",function(d) {
+      //console.log(d);
+      if (eoo%2==0) {
+          eoo+=1;
+         // console.log("white");
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         // console.log("black");
+         return "#ebebeb"
+  }});
+  //tr2.append("td")
+   // .text(function(d) {return d.Horizontal_resolution; });
+    tr2.selectAll("td")
+      .data(function(d) {
+        return main.map(function (k) {
+         return { "value":d[k], "name":k};
+       });
+     }).enter()
+      .append("td")
+      .attr("id",function(d) {
+        return d.name;
+        })
+      .text(function(d) {
+        //console.log(d);
+        return d.value;
+     });
+  
+  var srefs=d3.selectAll("#SREF").selectAll("td");
+  console.log(srefs._groups[0]);
+  srefs.each(function(d,i) {
+    console.log(this.innerText);
+    if (this.innerText.replace(/ /g,'')=="Various(ClickforPDFtable)") {
+      d3.select(this).on("click",function(k) {
+        window.location="SREF_members.pdf";
+      });
+      d3.select(this)
+      //  .style("width","100%")
+      //  .style("height","100%")
+      //  .attr("href","http://www.google.com")
+      //  .html("various")
+        .style("cursor","pointer");
+    }
+  })
+
+  var hiresw=d3.selectAll("#HiResWindow").selectAll("td");
+  console.log(hiresw._groups[0]);
+  hiresw.each(function(d,i) {
+    console.log(this.innerText);
+    if (this.innerText.replace(/ /g,'')=="Various(ClickforPDFtable)") {
+      d3.select(this).on("click",function(k) {
+        window.location="HiResW_runs.pdf";
+      });
+      d3.select(this)
+      //  .style("width","100%")
+      //  .style("height","100%")
+      //  .attr("href","http://www.google.com")
+      //  .html("various")
+        .style("cursor","pointer");
+    }
+  })
+
+  var namnest=d3.selectAll("#NAMNest").selectAll("td");
+  console.log(namnest._groups[0]);
+  namnest.each(function(d,i) {
+    console.log(this.innerText);
+    if (this.innerText.replace(/ /g,'')=="Various(ClickforPDFtable)") {
+      d3.select(this).on("click",function(k) {
+        window.location="NAM_Nest_runs.pdf";
+      });
+      d3.select(this)
+      //  .style("width","100%")
+      //  .style("height","100%")
+      //  .attr("href","http://www.google.com")
+      //  .html("various")
+        .style("cursor","pointer");
+    }
+  })
+
+  var domains=d3.selectAll("#Domain");
+    var images = new Array()
+  domains.each(function(d,i) {
+    var thismodel=this.parentNode.id;
+            if (thismodel!=="GFS" && thismodel!=="GEFS" && thismodel!=="CFS") {
+            images[i] = new Image()
+            images[i].src = thismodel+".png"
+             images[i].onload = function(j) {
+                   //console.log(images[i]);
+                   console.log(j);
+                 }
+               }
+    if (d.value.split(" ")[0]==="Click") { 
+    d3.select(this).style("cursor","pointer");
+    d3.select(this).on("click",function(k) {
+    //console.log(d.value.split(" ")[0]);
+    console.log(this.parentNode.id);
+    var thismodel=this.parentNode.id;
+    imagecontainer=d3.select("#headercontainer").append("div").attr("class","gcontainer");
+    console.log(imagecontainer);
+
+imagecontainer.on("click",function(i) {
+      d3.select(this).transition().duration(333).style("opacity","0").remove();});
+    //imagecontainer.app
+    imagecontainer.append("div")
+      .attr("class","imagebox");
+    d3.select(".imagebox").append("img").attr("src",thismodel+".png").attr("class","domainimage");
+    d3.select(".gcontainer").transition().duration(333).style("opacity","1");
+    });
+   };
+  });
+  
+  tinurls=["https://www.weather.gov/media/notification/pdf2/scn21-20_gfsv16.0_aac.pdf",
+           "https://www.weather.gov/media/notification/pdf2/scn20-46rapv5_hrrr_v4aab.pdf",
+           "http://www.nws.noaa.gov/os/notification/tin16-41nam_updatesaab.htm",
+           "https://www.weather.gov/media/notification/pdf2/scn20-46rapv5_hrrr_v4aab.pdf",
+           "http://www.nws.noaa.gov/os/notification/tin16-41nam_updatesaab.htm",
+           "https://www.weather.gov/media/notification/SCN_20-75_GEFSv12_Changes.pdf",
+           "http://cfs.ncep.noaa.gov/cfsv2.info/TIN_Amend_10-55_CFS_031511.docx",
+           "https://www.weather.gov/media/notification/scn21-38hiresw_v8_hrefaaa.pdf",
+           "http://www.nws.noaa.gov/os/notification/tin15-32srefaae.htm",
+           "https://www.weather.gov/media/notification/pdf2/scn20-54hwrf_v13aaa.pdf",
+           "https://www.weather.gov/media/notification/scn20-51hmon_v3_0-0.pdf"]
+ 
+  var lastdates=d3.selectAll("#Last_date");
+  lastdates.each(function(d,i) {
+    d3.select(this).on("click",function(k) {
+      window.location=tinurls[i];
+    });
+    d3.select(this).style("cursor","pointer");
+  });
+
+
+
+  d3.select("#hr").each(function(k) {
+    var pq=[];
+  d3.select(".m2body").selectAll("tr").sort(function(a,b) { 
+      var ak=a[k].split(" ")[0];
+      var bk=b[k].split(" ")[0];
+      if (b[k].replace(/\D/g,'')=='') { 
+        var nameA=a[k].toLowerCase().replace(/[^\w]/g,''),nameB=b[k].toLowerCase().replace(/[^\w]/g,'');
+        if (ascend==1) {
+          pq.push(nameA < nameB ? 1 : -1);
+          return nameA < nameB ? 1 : -1;
+        }
+        else {
+          pq.push(nameA > nameB ? 1 : -1);
+          return nameA > nameB ? 1 : -1;
+        }
+      }
+      else {
+        if (ascend==1) {
+          //pq.push(+ak.replace(/\D/g,'') < +bk.replace(/\D/g,'') ? 1 : -1);
+          //return +ak.replace(/\D/g,'') < +bk.replace(/\D/g,'') ? 1 : -1;
+          pq.push(+ak.replace(/[^0-9.]/g,'') < +bk.replace(/[^0-9.]/g,'') ? 1 : -1);
+          return +ak.replace(/[^0-9.]/g,'') < +bk.replace(/[^0-9.]/g,'') ? 1 : -1;
+        }
+        else {
+          //pq.push(+ak.replace(/\D/g,'') > +bk.replace(/\D/g,'') ? 1 : -1);
+          //return +ak.replace(/\D/g,'') > +bk.replace(/\D/g,'') ? 1: -1;
+          pq.push(+ak.replace(/[^0-9.]/g,'') > +bk.replace(/[^0-9.]/g,'') ? 1 : -1);
+          return +ak.replace(/[^0-9.]/g,'') > +bk.replace(/[^0-9.]/g,'') ? 1: -1;
+        }
+     }
+    });
+    if (ascend==0) {
+      ascend=1;
+    }
+    else {
+      ascend=0;
+    }
+  var i=-1;
+  d3.select(".mbody").selectAll("tr").sort(function (a,b){
+  i+=1;
+  return pq[i];
+
+  });
+
+  var innames=[];
+  d3.selectAll(".t2header").each(function(k) {
+    innames.push(k);
+});
+  //console.log(innames)
+  //console.log(iloop._groups[0]);
+  var colid="#Horizontal_resolution";
+  for (i=0;i<innames.length;i++) {
+    if (innames[i]==="Horizontal_resolution") {
+      //iloop._groups[0][i].style.backgroundColor="#5288be";
+      //console.log("inital");
+      colid="#Horizontal_resolution";
+    }
+  }
+  d3.selectAll("#hr").style("background-color","#5288be");
+
+
+  var eoo=0;
+ //   console.log(d);
+ // });
+  var eoo=0;
+  d3.select(".mbody").selectAll("tr")
+   .style("background-color",function(d) {
+      //console.log(eoo);
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         return "#ebebeb"
+  }});
+  var eoo=0;
+  d3.select(".m2body").selectAll("tr")
+   .style("background-color",function(d) {
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#fff";
+         }
+       else {
+          eoo+=1;
+         return "#ebebeb"
+  }});
+  var eoo=0;
+  d3.selectAll(colid)
+   .style("background-color",function(d) {
+      //console.log("initial");
+      //console.log(this.parentNode.style.backgroundColor);
+      if (eoo%2==0) {
+          eoo+=1;
+          return "#edf3f8";
+         }
+       else {
+          eoo+=1;
+         return "#b9cfe5"
+  }});
+  });
+
+  
+});
+
+document.getElementById('maint').style.width=document.body.clientWidth-document.getElementById('t').offsetWidth+"px"
+//console.log(document.getElementById('maint').style.width);
+
+//scrolling to top code from shunryu111 stackoverflow answer at http://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation
+// first add raf shim
+// http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+// main function
+function scrollToY(scrollTargetY, speed, easing) {
+    //console.log("start");
+    // scrollTargetY: the target scrollY property of the window
+    // speed: time in pixels per second
+    // easing: easing equation to use
+
+    var scrollY = window.scrollY || document.documentElement.scrollTop,
+        scrollTargetY = scrollTargetY || 0,
+        speed = speed || 2000,
+        easing = easing || 'easeOutSine',
+        currentTime = 0;
+   // console.log(scrollY);
+   // console.log("scrollY");
+   // console.log(window.scrollY);
+   // console.log(document.documentElement.scrollTop);
+    // min time .1, max time .8 seconds
+    var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+    // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+    var easingEquations = {
+            easeOutSine: function (pos) {
+                return Math.sin(pos * (Math.PI / 2));
+            },
+            easeInOutSine: function (pos) {
+                return (-0.5 * (Math.cos(Math.PI * pos) - 1));
+            },
+            easeInOutQuint: function (pos) {
+                if ((pos /= 0.5) < 1) {
+                    return 0.5 * Math.pow(pos, 5);
+                }
+                return 0.5 * (Math.pow((pos - 2), 5) + 2);
+            }
+        };
+
+    // add animation loop
+    function tick() {
+        currentTime += 1 / 60;
+
+        var p = currentTime / time;
+        var t = easingEquations[easing](p);
+
+        if (p < 1) {
+            requestAnimFrame(tick);
+
+            window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
+        } else {
+            //console.log('scroll done');
+            window.scrollTo(0, scrollTargetY);
+        }
+    }
+
+    // call it once to get started
+    tick();
+}
+
+
+
+
+d3.select("#tmbox")
+  .on("click",function(d) {
+      //console.log("click");
+      scrollToY(0,1500,'easeInOutQuint');
+    });
+  //.on("click",scrollToY(0,150,'easeInOutQuint'));
+
+
+var books=["md","gwtw","wap"];
+d3.selectAll(".b")
+  .data(books);
+d3.selectAll(".b")
+  .on("click",function(d) {
+    var links=d3.selectAll(".b");
+    //console.log(links._groups[0]);
+    links.style("color","#fff");
+    for (i=0;i<links._groups[0].length;i++) {
+       if (links._groups[0][i].__data__==d) {
+         links._groups[0][i].style.color="#989898";
+        }
+    }
+    //console.log(d);
+    });
+d3.selectAll(".c")
+  .on("click",function(d) {
+    var links=d3.selectAll(".b");
+    links.style("color","#fff");
+    });
+
+var ulpps=d3.select("#menu");
+d3.text("2701.txt",function(data) {
+  //console.log(data);
+  var moby=d3.select("#text1")
+      //.append("p")
+      .text(data);
+  });
+d3.text("gwtw.txt",function(data) {
+  //console.log(data);
+  var moby=d3.select("#text3")
+      //.append("p")
+      .text(data);
+  });
+d3.text("wap.txt",function(data) {
+  //console.log(data);
+  var moby=d3.select("#text4")
+      //.append("p")
+      .text(data);
+  });
+//shadowheight=document.getElementById('shadow').offsetHeight;  
+//shadowwidth=document.getElementById('shadow').offsetWidth;  
+//document.getElementById('barcontainer').style.top=(shadowheight*.5)+"px"
+
+
+var bc=d3.select("#barcontainer");
+var line=d3.select("#tmcontainer");
+var lineh=line._groups[0][0].offsetHeight;
+var linew=line._groups[0][0].offsetWidth;
+      var tmcontainerRect = document.getElementById('tmcontainer');
+      var landr=tmcontainerRect.getBoundingClientRect();
+//console.log(lineh);
+//console.log(landr.left);
+//console.log(landr.right);
+//console.log(bc);
+var bcw=bc._groups[0][0].offsetWidth;
+var bch=bc._groups[0][0].offsetHeight;
+//ulpps.onclick=function() {
+//  return false;
+//  }
+
+scrollTop=0.0;
+//var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+window.onscroll=function() {
+//console.log("scroll");
+var line=d3.select("#tmcontainer");
+var lineh=line._groups[0][0].offsetHeight;
+      var bodyRect = document.body.getBoundingClientRect();
+      var tmelement = document.getElementById('shadow');
+      var tmenuRect=tmelement.getBoundingClientRect();
+      var tmcontainerRect = document.getElementById('tmcontainer');
+      difpix=tmenuRect.bottom-bodyRect.top;
+      //console.log(difpix);
+scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      zi=Math.floor(scrollTop/difpix*17)+1;
+      console.log(zi);
+      if (zi<18 && zi>0) {
+        d3.select("#himage")
+          .attr("src","gfs"+zi+".png");
+       }
+
+     if (scrollTop>difpix) {
+        tmcontainerRect.className='fixed';
+        document.getElementById('tablemodel').style.marginTop=lineh+"px"
+        document.getElementById('tablemain').style.marginTop=lineh+"px"
+        document.getElementById('tmcontainer').style.left=landr.left+"px"
+        document.getElementById('tmcontainer').style.right=landr.right+"px"
+      }
+      else {
+        document.getElementById('tablemodel').style.marginTop="0px"
+        document.getElementById('tablemain').style.marginTop="0px"
+        tmcontainerRect.className='tmcontainer';
+        document.getElementById('tmcontainer').style.left=landr.left+"px"
+        document.getElementById('tmcontainer').style.right=landr.right+"px"
+      }
+  };
+      
+
+  
+
+function myFunction(x) {
+    x.classList.toggle("change");
+    var ulpps=d3.select("#menu");
+    if (def==0) {
+      document.getElementById('menu').style.top="50%"
+      ulpps.style("visibility","visible");
+      var ulw=ulpps._groups[0][0].offsetWidth;
+      var bodyRect = document.body.getBoundingClientRect();
+      var element=document.getElementById('menu');
+      rect=element.getBoundingClientRect();
+      var barpos=document.getElementById('barcontainer').getBoundingClientRect();
+      //console.log(barpos.top);
+      //console.log(barpos.left);
+      //console.log(barpos.right);
+      document.getElementById('barcontainer').style.transition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color .3s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color .3s ease-in";
+      document.getElementById('menu').className+=" load";
+      document.getElementById('barcontainer').className+=" load";
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+var bc=d3.select("#barcontainer");
+var bcw=bc._groups[0][0].offsetWidth;
+var bch=bc._groups[0][0].offsetHeight;
+      //document.getElementById('menu').style.top=(rect.top-bodyRect.top)-0.0+(bch/2.0)+"px";
+      document.getElementById('menu').style.top=(rect.top-bodyRect.top)-(bch/2.0)-5+"px"
+      document.getElementById('menu').style.right=(bodyRect.right-barpos.right)-10+"px"
+      document.getElementById('menu').style.width=document.body.clientWidth-2*((bodyRect.right-barpos.right)-10)+"px"
+
+
+
+
+      def=1;
+    }
+    else {
+      ulpps.style("visibility","hidden");
+      document.getElementById('menu').className="uldate";
+      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').className="barcontainer";
+      document.getElementById('menu').style.top="50%"
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+      def=0;
+    }
+
+}
+d3.select('#maintextcontainer').on("click",(function(d) {
+
+      var ulpps=d3.select("#menu");
+      ulpps.style("visibility","hidden");
+      document.getElementById('menu').className="uldate";
+      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').className="barcontainer";
+      document.getElementById('menu').style.top="50%"
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+      def=0;
+
+     }));
+document.body.onclick=function(event) {
+      if ((!document.getElementById('menu').contains(event.target) && !document.getElementById('barcontainer').contains(event.target))) {
+      //if (document.getElementById('maintextcontainer').contains(event.target)) {
+      //console.log(def);
+      var ulpps=d3.select("#menu");
+      ulpps.style("visibility","hidden");
+      document.getElementById('menu').className="uldate";
+      document.getElementById('barcontainer').style.transition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.msTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.mozTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.oTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').style.webkitTransition="background-color 0s ease-in";
+      document.getElementById('barcontainer').className="barcontainer";
+      document.getElementById('menu').style.top="50%"
+      document.getElementById('barcontainer').style.borderWidth="0px 0px 0px 0px"
+      def=0;
+    }
+  };
+
+window.onresize = function(event) {
+  var windowwidth=document.body.clientWidth;
+  var ltwidth=document.getElementById('t').offsetWidth;
+  var mtwidth=document.getElementById('tablemain').offsetWidth;
+  var mtscroll=document.getElementById('maint').scrollLeft;
+  if ((windowwidth-(ltwidth-mtscroll))-mtwidth>=0) {
+    d3.select(".sboxright").style("visibility","hidden");
+  }
+  else {
+    d3.select(".sboxright").style("visibility","visible");
+  }
+document.getElementById('maint').style.width=document.body.clientWidth-document.getElementById('t').offsetWidth+"px"
+//console.log(document.getElementById('maint').offsetWidth);
+//console.log(document.getElementById('t').offsetWidth);
+      //console.log(scrollTop);
+      document.getElementById('menu').style.top="50%"
+      var bodyRect = document.body.getBoundingClientRect();
+      var element=document.getElementById('menu');
+      rect=element.getBoundingClientRect();
+      var barpos=document.getElementById('barcontainer').getBoundingClientRect();
+var bc=d3.select("#barcontainer");
+var bcw=bc._groups[0][0].offsetWidth;
+var bch=bc._groups[0][0].offsetHeight;
+      //console.log((rect.top-bodyRect.top)-(bch/2.0)-5+"px");
+      //document.getElementById('menu').style.top=(rect.top-bodyRect.top)-0.0+(bch/2.0)+"px";
+      document.getElementById('menu').style.top=(rect.top-bodyRect.top)-(bch/2.0)-5+"px"
+      document.getElementById('menu').style.right=(bodyRect.right-barpos.right)-10+"px"
+      document.getElementById('menu').style.width=document.body.clientWidth-2*((bodyRect.right-barpos.right)-10)+"px"
+      //window.scrollTo(0,scrollTop);
+};
+
+
+
+var droppedpps=0;
+function changepps() {
+  if (droppedpps==0) {
+    afterpps.attr("class","select-styled active");
+    ulpps.style("display","block")
+    droppedpps=1;
+   }
+   else {
+    droppedpps=0;
+    ulpps.style("visibility","hidden");
+    afterpps.attr("class","select-styled");
+    showpps.attr("class","select");};
+};
+var ppslist=["MEG","GFS"];
+var pstrings=["","gfs"];
+var pagestring="";
+
+//page menu creation
+var hidepps=d3.select("#pps")
+  .attr("class","select-hidden");
+hidepps.selectAll("option")
+  .data(ppslist)
+  .enter().append("option")
+    .text(function(d) { return d; });
+hidepps.property("value","Pages");
+var showpps=d3.select("#divpps")
+  .attr("class","select");
+var afterpps=d3.select("#afterpps")
+  .attr("class","select-styled")
+  .text("Pages")
+  .on("click",changepps);
+afterpps.property("value","Pages");
+var ulpps=d3.select("#divpps").append("ul")
+  .attr("class","uldate");
+ulpps.selectAll("li")
+  .data(ppslist)
+  .enter().append("li")
+    .attr("class","mainlipps")
+    .text(function(d,i) { return ppslist[i]; })
+    .attr("id",function(d) { return "MD"+String(d);});
+ulpps.style("visibility","hidden");
+ulpps.selectAll(".mainlipps").on("click",function(d) {
+  for (i=0;i<ppslist.length;i++) {
+    if (ppslist[i]==d) {
+      //field=ppsdata[i];
+      //field2=ppsdata2[i];
+      //imax=imaxespps[i];
+      pagestring=pstrings[i];
+      //console.log(d);
+    }
+   }
+    droppedpps=0;
+    ulpps.style("visibility","hidden");
+    afterpps.attr("class","select-styled");
+    showpps.attr("class","select");
+    window.location="http://www.emc.ncep.noaa.gov/mmb/gmanikin/megsite/testmeg"+pagestring+".html"
+  //loadimages();
+})
+
+d3.select("#logo")
+  .on("click",function(d) {
+     window.location="http://www.emc.ncep.noaa.gov/mmb/gmanikin/megsite/index.html"
+     //console.log("clicked");
+  })
+</script>
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137023687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137023687-1');
+</script>

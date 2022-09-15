@@ -1,0 +1,12 @@
+Model,Version,Horizontal_resolution,Vertical_resolution,Model_top,Last_date
+GFS,v15.1,May-September 2018,12 June 2019 (Implemented),FV3GFS Evaluation Webpage,7 May 2019,
+HMON,v3,March-April 2020,11 June 2020 (Implemented),n/a,8 May 2020,
+RTMA URMA,v2.8,October-November 2019,28 July 2020 (Implemented),RTMA/URMAv2.8 Evaluation Webpage,24 June 2020,
+HWRF,v13,April 2020,5 August 2020 (Implemented),n/a,9 July 2020
+GEFS,v12,March-April 2020,23 September 2020 (Implemented),GEFSv12 Evaluation Webpage,20 August 2020,
+RAP HRRR,v5/v4,October-December 2019,2 December 2020 (Implemented),RAPv5/HRRRv4 Evaluation Webpage,2 November 2020,
+RTOFS,v2.0,May-July 2020,10 December 2020 (Implemented),RTOFSv2 Evaluation Webpage,6 November 2020,
+NWPS,v1.3,October 2019,3 February 2021 (Implemented),n/a,1 February 2021,
+GFS,v16,August-September 2020,22 March 2021 (Implemented),GFSv16 Evaluation Webpage,18 March 2021,
+HREF,v3,May-July 2020,11 May 2021 (Implemented),HREFv3 Evaluation Webpage,23 April 2021,
+AQM,v6,March 2021,20 July 2021 (Implemented),AQMv6 Evaluation Webpage,15 July 2021,

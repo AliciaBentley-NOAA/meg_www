@@ -1,0 +1,12 @@
+Model,Core,Horizontal_resolution,Vertical_resolution,Model_top,Domain,Forecast_hours,Cycles_per_day,Convective_scheme,Microphysics,PBL,Radiation,IC,Boundary_conditions,Last_date
+GFS,FV3,13 km,127,0.01 hPa,Global,384,4 (00/06/12/18Z),Scale-aware SAS,GFDL,Scale-aware TKE-EDMF,RRTMG; McICA,GFS,N/A (global),03/2021,
+HRRR,ARW,3 km,50,20 hPa,Click for domain image,48 at 00/06/12/18Z;   18 at all other cycles,24,None,Thompson,MYNN,RRTMG,RAP,RAP,12/2020,
+NAM,NMMB,12 km,60,2 hPa,Click for domain image,84,4 (00/06/12/18Z),BMJ,Ferrier-Aligo,MYJ,RRTMG for NMMB,NDAS,GFS,03/2017,
+RAP,ARW,13 km,50,10 hPa,Click for domain image,"51 at 03/09/15/21Z;   21 at all other cycles",24,Grell-Freitas-Olson,Thompson,MYNN,RRTMG,GFS,GFS,12/2020,
+NAM Nest,NMMB,3 km,60,2 hPa,Click for domain image,60,4 (00/06/12/18Z),None,Ferrier-Aligo,MYJ,RRTMG for NMMB,Various (Click for PDF table),Various (Click for PDF table),03/2017,
+GEFS,FV3,25 km,64,0.2 hPa,Global,384 h (06/12/18z); 35 days (00z),4 (00/06/12/18Z),SAS,GFDL,EDMF,RRTMG; McICA,GFS 3DVar EnKF,N/A (global),09/2020,
+CFS,GSM/MOM4/CICE1/Noah,100 km,64,0.2 hPa, Global,9 months,4 (00/06/12/18Z),SAS,Zhao and Carr and Sundqvist,MRF,RRTM; McICA,CFSv2 CDAS,Predictive Ice and SSTs,04/2011,
+HiResWindow,ARW and FV3,Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Click for domain image,Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),05/2021,
+SREF,ARW and NMMB,16 km,40,50 hPa,Click for domain image,87,4 (03/09/15/21Z),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),Various (Click for PDF table),GEFS members; GFS for control,10/2015,
+HWRF,NMM,1.5- 4.5- 13.5-km inner/middle/parent,75,10 hPa,Click for domain image,126,4 (00/06/12/18Z),Scale-Aware SAS,Ferrier-Aligo,EDMF,RRTMG,GFS,GFS,07/2020,
+HMON,NMMB,2- 6- 18-km inner/middle/parent,71,50 hPa,Click for domain image,126,4 (00/06/12/18Z),Scale-Aware SAS,Ferrier-Aligo,EDMF,RRTMG,GFS,GFS,06/2020,
