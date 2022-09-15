@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+
+/* ====================================================================================== */
+/* General document settings */
+/* ====================================================================================== */
+
+body{
+	margin: 0px;
+	background-color: white;
+	font-family:'Source Sans Pro', sans-serif;
+}
+
+.bold{
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+
+a1{
+	margin: 0px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+select{
+	font-family: "Open Sans", trebuchet ms;
+	padding: 5px;
+	font-size: 16px;
+	max-height: 300px;
+}
+
+#pageContents {
+        position:absolute;
+        text-align:left;
+        top:75px;
+        left:50px;
+        padding:0px;
+        width:1000px;
+        font-size:1.25em;
+        font-weight:50;
+}
+
+/* ====================================================================================== */
+/* Top of page element */
+/* ====================================================================================== */
+
+.page-top{
+	width: 100%;
+	height: 47px;
+	font-family: "Open Sans", trebuchet ms;
+        font-family:'Source Sans Pro', sans-serif;
+	margin: 0px;
+	padding: 0px;
+
+//	background: #54a8f2;
+	background: #112e51;
+	display: table;
+}
+
+.page-top span{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	
+	margin: auto;
+	
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+        border-bottom: 1px solid black;
+}
+
+/* ====================================================================================== */
+/* Top menu */
+/* ====================================================================================== */
+
+.page-menu{
+	width: 100%;
+	background: #e0e0e0;
+	font-size: 15px;
+}
+
+.page-menu .table{
+	display: table;
+	margin: auto;
+}
+
+.page-menu .element{
+	display: table-cell;
+	padding: 2px;
+}
+
+/* ====================================================================================== */
+/* Middle menu */
+/* ====================================================================================== */
+
+.page-middle{
+	width: 100%;
+    background: #e0e0e0;
+	font-size: 13px;
+	padding-top: 2px; 
+	padding-bottom: 3px;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: top;
+	border-bottom: 1px solid black;
+}
+
+/* ====================================================================================== */
+/* Element containing map */
+/* ====================================================================================== */
+
+#page-map{
+	width: 70%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+#loading{
+	position: absolute;
+	z-index: 100;
+	margin: auto;
+	width: 99%;
+	display: none;
+	text-align: center;
+}
+
+
+/* ====================================================================================== */
+/* Bottom of page element */
+/* ====================================================================================== */
+
+.page-footer{
+	width: 100%;
+	height: 12px;
+	margin: 0px;
+	padding: 0px;
+	display: table;	
+}
+
+.page-footer span{
+	font-size: 13px;
+/*	font-weight: bold; */
+	color: black;
+	margin: auto;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* ====================================================================================== */
+/* Mobile screen handling */
+/* ====================================================================================== */
+
+@media only screen and (max-width: 800px){
+	.page-menu .element{
+		display: block;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		font-size: 10px;
+	}
+	select{
+		font-size:14px;
+	}
+}
+@media only screen and (max-width: 950px){
+	#page-map{
+		width: 98%;
+	}
+}

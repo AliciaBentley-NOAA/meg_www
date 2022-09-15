@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GEFSv12 Verification</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="https://www.emc.ncep.noaa.gov/users/verification/style/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://www.emc.ncep.noaa.gov/users/verification/style/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+<style>
+        .dropdown-content {
+                 top: -305%;
+        }
+</style>
+</head>
+
+<script>
+function createDropdown(opt) {
+  /* When the user clicks on the button, 
+     toggle between hiding and showing the dropdown content */
+  document.getElementById(opt.nextElementSibling.id).classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  var oFrame = document.getElementById("body_frame");
+  oFrame.contentWindow.document.onclick = function() {
+        var i;
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+  };
+  if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+          }
+      }
+  }
+  if (event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (event.target.nextElementSibling.id != openDropdown.id) {
+              if (openDropdown.classList.contains('show')) {
+                  openDropdown.classList.remove('show');
+               }
+          }
+      }
+  }
+}
+
+</script>
+
+<body>
+<div id="page" class="container">
+	<div id="header">
+		<div id="logo">
+			<img src="images/noaa.png" alt="" width="100" />
+			<img src="images/nws.png" alt="" width="100" />
+			<h1><font color="white">GEFSv12<br>Verification</font></h1>
+		</div>
+		<div id="menu">
+			<ul>
+                            <li><a href="./" accesskey="1" title="">Home</a></li>
+                            <div class="dropdown">
+                                <button onclick="createDropdown(this)" class="dropbtn" accesskey="2">Time Series  &rsaquo;&rsaquo;</button>
+                                     <div id="Dropdown_timeseries" class="dropdown-content">
+                                         <a href="z500_ts.html">500-hPa geo. height</a>
+                                         <a href="t850_ts.html">850-hPa temperature</a>
+                                         <a href="z1000_ts.html">1000-hPa geo. height</a>
+                                         <a href="u10m_ts.html">10-m u wind</a>
+                                         <a href="v10m_ts.html">10-m v wind</a>
+                                         <a href="t2m_ts.html">2-m temperature</a>
+                                     </div>
+                            </div>
+                            <div class="dropdown">
+                                <button onclick="createDropdown(this)" id="active" class="dropbtn" accesskey="3">Dieoff Curves &rsaquo;&rsaquo;</button>
+                                     <div id="Dropdown_dieoffs" class="dropdown-content">
+                                         <a href="u250.html">250-hPa u wind</a>
+                                         <a href="v250.html">250-hPa v wind</a>
+                                         <a href="z500.html">500-hPa geo. height</a>
+                                         <a href="u850.html">850-hPa u wind</a>
+                                         <a href="v850.html">850-hPa v wind</a>
+                                         <a href="t850.html">850-hPa temperature</a>
+                                         <a href="z1000.html">1000-hPa geo. height</a>
+                                         <a href="u10m.html">10-m u wind</a>
+                                         <a href="v10m.html">10-m v wind</a>
+                                         <a href="t2m.html">2-m temperature</a>
+                                     </div>
+                            </div>
+                            <div class="dropdown">
+                                <button onclick="createDropdown(this)" class="dropbtn" accesskey="5">Precipitation &rsaquo;&rsaquo;</button>
+                                     <div id="Dropdown_grid2grid" class="dropdown-content">
+                                         <a href="precip_ts.html">Skill Score<br>Time Series</a>
+                                         <a href="precip_rd.html">Reliability Diagrams</a>
+                                         <a href="precip_ss.html">Skill Scores by<br>Forecast Lead</a>
+                                         <a href="precip_pr.html">Skill Scores by<br>Precipitation Rate</a>
+                                     </div>
+                            </div>
+                                <li><a href="https://www.emc.ncep.noaa.gov/users/meg/gefsv12/retros/" accesskey="6" title="" target="_blank">GEFSv12<br>Retrospective<br>Case Studies</a></li>
+                                <li><a href="https://www.emc.ncep.noaa.gov/users/meg/gefsv12/" accesskey="7" title="" target="_blank">GEFSv12<br>Official Evaluation Webpage</a></li>
+                            <li></li>
+                        </ul>
+		</div>
+	</div>
+	<div id="main">
+		<div id="banner">
+                    <iframe id="body_frame" src="loops/dieoffs_v10m.php" width="1100" height="750" style="border: 1px solid black;"></iframe>
+		</div>
+		<div id="welcome">
+                        <p><font size="2">This webpage displays verification statistics from the NCEP Global Ensemble Forecast System (GEFS).<br>
+                        <b>DISCLAIMER:</b> This webpage is not "operational" and is not subject to 24-h monitoring by NCEP's Central Operations staff.</font></p>
+                </div>
+                <div id="contact">
+                        <p><font size="2"><b>CONTACT INFORMATION</b><br>Alicia.Bentley@noaa.gov - Webmaster<br>Yuejian.Zhu@noaa.gov - GEFS forecasts<br>Yan.Luo@noaa.gov - GEFS verification<br>Binbin.Zhou@noaa.gov - GEFS verification<br>Jason.Levit@noaa.gov - VPPPG Branch Chief<br>Geoffrey.Manikin@noaa.gov - Model Evaluation Group
+                </font></div>
+                <div id="footer">
+			<img src="images/noaa.png" alt="" width="100" />
+			<img src="images/nws.png" alt="" width="100" />
+			<img src="images/commerce.png" alt="" width="100" />
+			<img src="images/usagov.png" alt="" width="100" />
+			<br>
+			<a href="https://www.weather.gov/privacy">Privacy Policy</a> | <a href="https://www.weather.gov/disclaimer">Disclaimer</a> | <a href="https://www.commerce.gov">Department of Commerce</a> | <a href="https://www.noaa.gov">NOAA</a> | <a href="https://www.weather.gov">NWS</a> | <a href="https://www.ncep.noaa.gov">NCEP</a> | <a href="https://www.emc.ncep.noaa.gov">EMC</a>
+		</div>
+		<div id="copyright">
+		</div>
+	</div>
+</div>
+</body>
+</html>

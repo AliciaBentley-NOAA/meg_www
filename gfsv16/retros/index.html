@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GFSv16 Retrospectives</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="https://www.emc.ncep.noaa.gov/users/verification/style/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://www.emc.ncep.noaa.gov/users/verification/style/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+<style>
+        .dropdown-content {
+                 top: -460%;
+        }
+</style>
+</head>
+
+<script>
+function createDropdown(opt) {
+  /* When the user clicks on the button, 
+     toggle between hiding and showing the dropdown content */
+  document.getElementById(opt.nextElementSibling.id).classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  var oFrame = document.getElementById("body_frame");
+  oFrame.contentWindow.document.onclick = function() {
+        var i;
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+  };
+  if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+          }
+      }
+  }
+  if (event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (event.target.nextElementSibling.id != openDropdown.id) {
+              if (openDropdown.classList.contains('show')) {
+                  openDropdown.classList.remove('show');
+               }
+          }
+      }
+  }
+}
+</script>
+
+
+<body>
+<div id="page" class="container">
+	<div id="header">
+		<div id="logo">
+			<img src="https://www.emc.ncep.noaa.gov/users/verification/style/images/noaa.png" alt="" width="100" />
+			<img src="https://www.emc.ncep.noaa.gov/users/verification/style/images/nws.png" alt="" width="100" />
+			<h1><font color="white">GFSv16<br>Retrospectives</font></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="./" accesskey="1" title="">Home</a></li>
+				<div class="dropdown">
+                                   <button onclick="createDropdown(this)" class="dropbtn" accesskey="2">Winter Storms &rsaquo;&rsaquo;</button>
+                                        <div id="Dropdown_winter" class="dropdown-content">
+                                            <a href="./OctSnow">October Snow Storm<br>(Oct 2019)</a>
+                                            <a href="./AKSnow">Alaska Snow Storm<br>(Nov 2019)</a>
+                                            <a href="./WestCoastBomb">WCoast Bomb Cyclone<br>(Nov 2019)</a>
+                                            <a href="./ORDthxgiving">Chicago Thanksgiving<br>(Nov 2019)</a>
+					    <a href="./easternNAbomb">N Amer. Bomb Cyclone<br>(Dec 2019)</a>
+                                            <a href="./nyice">New York Ice Event<br>(Dec 2019)</a>
+                                            <a href="./AKnewyear">AK New Year Storm<br>(Jan 2020)</a>
+					    <a href="./SeattleWind">Pacific NW Windstorm<br>(Jan 2020)</a>	
+                                            <a href="./Newfoundland">Newfoundland Cyclone<br>(Jan 2020)</a>
+                                            <a href="./ptypeIssues">Midwest Ptype Issues<br>(Jan 2020)</a> 
+                                            <a href="./AKcyclone">Alaskan Cyclone<br>(Jan 2020)</a>
+                                        </div>
+				</div>
+                                <div class="dropdown">
+                                   <button onclick="createDropdown(this)" class="dropbtn" accesskey="3">Tropical Cyclones &rsaquo;&rsaquo;</button>
+                                        <div id="Dropdown_tropical" class="dropdown-content">
+                                            <a href="./Florence2018">Florence (2018)</a>
+                                            <a href="./Michael2018">Michael (2018)</a>
+                                            <a href="./Barry2019">Barry (2019)</a>
+                                            <a href="./Dorian2019">Dorian (2019)</a>
+                                            <a href="./Humberto2019">Humberto (2019)</a>
+                                            <a href="./Imelda2019">Imelda (2019)</a>
+                                            <a href="./Karen2019">Karen (2019)</a>
+                                            <a href="./Lorenzo2019">Lorenzo (2019)</a>
+                                            <a href="./Nestor2019">Nestor (2019)</a>
+                                            <a href="./Olga2019">Olga (2019)</a>
+                                            <a href="./Barbara2019">Barbara (2019)</a>
+                                            <a href="./ErickFlossie2019">Erick/Flossie (2019)</a>
+                                            <a href="./Juliette2019">Juliette (2019)</a>
+                                            <a href="./Kiko2019">Kiko (2019)</a>
+                                            <a href="./Lorena2019">Lorena (2019)</a>
+                                            <a href="./Sarai2019">Sarai (2019)</a>
+                                            <a href="./Vicky2020">Vicky (2020)</a>
+                                        </div>
+                                </div>
+                                <div class="dropdown">
+                                   <button onclick="createDropdown(this)" class="dropbtn" accesskey="5">Excessive QPF &rsaquo;&rsaquo;</button>
+                                        <div id="Dropdown_rainfall" class="dropdown-content">
+                                            <a href="./halloweenQPF">Halloween Storm<br>(Oct/Nov 2019)</a>
+                                            <a href="./thxgivingNE">Post-Thxgiving Storm<br>(Nov/Dec 2019)</a>
+                                            <a href="./springCAstorm">California Spring Storm<br>(May 2019)</a>
+                                            <a href="./NWAtmosRiver">Pacific NW Atmo. River<br>(Jan/Feb 2020)</a>
+                                            <a href="./southQPF">Southern U.S. QPF<br>(Feb 2020)</a>
+                                        </div>
+                                </div>
+				<div class="dropdown">
+                                   <button onclick="createDropdown(this)" class="dropbtn" accesskey="4">Severe Weather &rsaquo;&rsaquo;</button>
+                                        <div id="Dropdown_severe" class="dropdown-content">
+                                            <a href="./MidMay2019">Mid-May SVR<br>(May 2019)</a>
+                                            <a href="./LateMay2019">Late-May SVR<br>(May 2019)</a>
+					    <a href="./FebTors">Mid-Atlantic Feb SVR<br>(Feb 2020)</a>
+                                            <a href="./BNATors">Tennessee Tornadoes<br>(Mar 2020)</a>
+                                            <a href="./EasterSVR">Easter Sunday SVR<br>(Apr 2020)</a>
+                                            <a href="./seSVR">Southeast U.S. SVR<br>(Apr 2020)</a>
+                                            <a href="./spSVR">Southern Plains SVR<br>(May 2020)</a>
+                                        </div>
+				</div>
+                                <div class="dropdown">
+                                   <button onclick="createDropdown(this)" class="dropbtn" accesskey="6">Extreme Heat/Cold &rsaquo;&rsaquo;</button>
+                                        <div id="Dropdown_heat" class="dropdown-content">
+                                            <a href="./MemorialHeat">Memorial Day Heat<br>(May 2019)</a>
+                                            <a href="./SanFranHeat">San Francisco Heat<br>(Jun 2019)</a>
+                                            <a href="./july2019heat">Eastern U.S. Heat<br>(Jul 2019)</a>
+                                            <a href="./akfires">Alaskan Wildfires<br>(Aug 2019)</a>
+                                            <a href="./august2019heat">Southern U.S. Heat<br>(Aug 2019)</a>
+                                            <a href="./oct2019cold">Intermountain W Cold<br>(Oct 2019)</a>
+                                            <a href="./ColdSurge">Central U.S. Cold<br>(Nov 2019)</a>
+                                            <a href="./jan2020cold">January Cold Blast<br>(Jan 2020)</a>
+                                            <a href="./feb2020cold">Valentine's Day Cold<br>(Feb 2020)</a>
+                                            <a href="./may2020cold">Mother's Day Wknd Cold<br>(May 2020)</a>
+                                        </div>
+                                </div>
+                                <li><a href="https://www.emc.ncep.noaa.gov/users/meg/gfsv16/soundings/" accesskey="6" title="" target="_blank">GFSv16<br>Retrospective<br>Soundings</a></li>
+				<li><a href="https://www.emc.ncep.noaa.gov/users/meg/gfsv16/" accesskey="7" title="" target="_blank">GFSv16<br>Official Evaluation Webpage</a></li>
+                                <li></li>
+			</ul>
+		</div>
+	</div>
+	<div id="main">
+		<div id="banner">
+                    <iframe id="body_frame" src="main.php" width="1100" height="800" style="border: 1px solid black;"></iframe>
+		</div>
+                <div id="contact">
+                	<p><font size="2"><b>CONTACT INFORMATION</b>
+			<br><b>Geoffrey.Manikin@noaa.gov</b> - EMC Model Evaluation Group Lead
+			<br><b>Alicia.Bentley@noaa.gov</b> - Webmaster/EMC Model Evaluation Group
+			<br><b>Shannon.Shields@noaa.gov</b> - EMC Model Evaluation Group
+                        <br><b>Philippe.Papin@noaa.gov</b> - EMC Model Evaluation Group
+                        <br><b>Christopher.MacIntosh@noaa.gov</b> - EMC Model Evaluation Group
+                        <br><b>Logan.Dawson@noaa.gov</b> - EMC Model Evaluation Group
+		</font></div>
+		<div id="footer"><font size="2">
+			<img src="https://www.emc.ncep.noaa.gov/users/verification/style/images/noaa.png" alt="" width="100" />
+			<img src="https://www.emc.ncep.noaa.gov/users/verification/style/images/nws.png" alt="" width="100" />
+			<img src="https://www.emc.ncep.noaa.gov/users/verification/style/images/commerce.png" alt="" width="100" />
+			<img src="https://www.emc.ncep.noaa.gov/users/verification/style/images/usagov.png" alt="" width="100" />
+			<br>
+			<a href="https://www.weather.gov/privacy">Privacy Policy</a> | <a href="https://www.weather.gov/disclaimer">Disclaimer</a> | <a href="https://www.commerce.gov">Department of Commerce</a> | <a href="https://www.noaa.gov">NOAA</a> | <a href="https://www.weather.gov">NWS</a> | <a href="https://www.ncep.noaa.gov">NCEP</a> | <a href="https://www.emc.ncep.noaa.gov">EMC</a>
+		</font></div>
+	</div>
+</div>
+</body>
+</html>
