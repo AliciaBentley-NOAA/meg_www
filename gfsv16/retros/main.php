@@ -8,6 +8,10 @@
 <script src="jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="functions.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--DAP script -->
+        <script src="//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&amp;subagency=NOAA" id="_fed_an_ua_tag"></script>
+
 </head>
 
 <body>
