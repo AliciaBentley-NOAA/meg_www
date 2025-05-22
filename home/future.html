@@ -5,6 +5,20 @@
   <title>NCEP Model Implementations</title>
   <link rel="stylesheet" type="text/css" href="meg9.css">
   <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8GECP61QES"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8GECP61QES');
+</script>
+
+        <!--DAP script -->
+        <script src="//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&amp;subagency=NOAA" id="_fed_an_ua_tag"></script>
+
 </head>
 
 <body>
@@ -624,7 +638,8 @@ imagecontainer.on("click",function(i) {
            "https://www.weather.gov/media/notification/pdf2/scn20-116nwps_v1_3aab.pdf",
            "https://www.weather.gov/media/notification/pdf2/scn21-20_gfsv16.0_aac.pdf",
            "https://www.weather.gov/media/notification/scn21-38hiresw_v8_hrefaaa.pdf",
-           "https://www.weather.gov/media/notification/pdf2/SCN21-60_aqm_v6.0_aaa.pdf"]
+           "https://www.weather.gov/media/notification/pdf2/SCN21-60_aqm_v6.0_aaa.pdf",
+  	   "https://www.weather.gov/media/notification/pdf_2023_24/scn23-104_naefs_v7.0.pdf"]
  
   var lastdates=d3.selectAll("#Last_date");
   lastdates.each(function(d,i) {
@@ -651,7 +666,9 @@ imagecontainer.on("click",function(i) {
            "",
            "https://www.emc.ncep.noaa.gov/users/meg/gfsv16/",
            "https://www.emc.ncep.noaa.gov/users/meg/hrefv3/",
-           "https://www.emc.ncep.noaa.gov/users/meg/cmaqv6/",]
+           "https://www.emc.ncep.noaa.gov/users/meg/cmaqv6/",
+  	   "https://www.emc.ncep.noaa.gov/users/meg/naefsv7/",
+  	   "https://www.emc.ncep.noaa.gov/users/meg/aqmv7/"]
 
   var randomname=d3.selectAll("#Model_top");
   randomname.each(function(d,i) {
